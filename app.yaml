@@ -1,0 +1,20 @@
+kind: wasmer.io/App.v0
+name: erdawedding
+package: wasmer/laravel
+
+# Mengatur batasan konkuransi agar PHP berjalan stabil di Edge
+scaling:
+  mode: single_concurrency
+
+# Mengaktifkan database MySQL otomatis dari Wasmer
+capabilities:
+  database:
+    engine: mysql
+
+# Konfigurasi Environment Variables Laravel
+env:
+  APP_ENV: production
+  APP_DEBUG: "false"
+  APP_KEY: "base64:Iwrgj11paCPW30Dk6zfrL3/FEzQ+OIX1nSuge8GsA2g="
+  APP_URL: "https://erdawedding.wasmer.app"
+  LOG_CHANNEL: stderr
